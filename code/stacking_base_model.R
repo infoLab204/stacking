@@ -53,7 +53,7 @@ for(i in 1:n_fold) {
     
     rrBLUP_yHat[test] <- rrblup_predicted_result
 
-    write.table(rrBLUP_yHat,file="rrBLUP_yHat_train_stacking_predicted.txt",row.names=F,col.names=F,quote=F, append=F,sep="\n")
+    write.table(rrBLUP_yHat,file="rrBLUP_yHat_training_stacking_predicted.txt",row.names=F,col.names=F,quote=F, append=F,sep="\n")
 
 
     yNA <- y
