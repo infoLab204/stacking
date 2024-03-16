@@ -53,9 +53,9 @@ for i in Epoch :
     hist=linear_model.fit(Stack_final_X_train,y_train_full,epochs=E, batch_size=BS, verbose=1, validation_split=0.2)
 
     test_pred=linear_model.predict(Stack_final_X_test)
-    np.savetxt(f"meta_nn_predicted_test.txt",test_pred, fmt="%.8f")
+    np.savetxt(f"meta_yHat_test_predicted.txt",test_pred, fmt="%.8f")
     train_pred=linear_model.predict(Stack_final_X_train)
-    np.savetxt(f"meta_nn_predicted_train.txt",train_pred, fmt="%.8f")
+    np.savetxt(f"meta_yHat_training_predicted.txt",train_pred, fmt="%.8f")
 
     co1,p1=stats.pearsonr(y_test[:,0], test_pred[:,0])
     co1_1,p1_1=stats.pearsonr(y_train_full[:,0], train_pred[:,0])
