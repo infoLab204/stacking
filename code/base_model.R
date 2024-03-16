@@ -88,13 +88,6 @@ BRRco1<-cor(fmBRR$yHat[-test],y[-test])
 
 cor_save="base_model_correlation.txt"
 
-paste("rrBLUP test", rrBLUPco, "training",rrBLUPco1)
-paste("gBLUP test", BRRco,"training", BRRco1)
-paste("BA test", BAco,"training", BAco1)
-paste("BB test", BBco,"training", BBco1)
-paste("BC test", BCco,"training", BCco1)
-paste("BL test", BLco,"training", BLco1)
-
 write.table(paste("rrBLUP test", rrBLUPco, "training",rrBLUPco1),file=cor_save,append=FALSE, row.names=FALSE, col.names=FALSE, quote=FALSE, sep="\n")
 write.table(paste("gBLUP test", BRRco,"training", BRRco1),file=cor_save,append=TRUE, row.names=FALSE, col.names=FALSE, quote=FALSE, sep="\n")
 write.table(paste("BA test", BAco,"training", BAco1),file=cor_save,append=TRUE, row.names=FALSE, col.names=FALSE, quote=FALSE, sep="\n")
