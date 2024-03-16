@@ -41,7 +41,6 @@ rrBLUPco1=cor(rrblup_predicted_train_result, pheno_train)
 write.table(rrblup_predicted_result,file=test_file_name,row.names=F,col.names=F,quote=F, append=F,sep="\n")
 write.table(rrblup_predicted_train_result,file=train_file_name, row.names=F,col.names=F,quote=F, append=F,sep="\n")
 
-# Bayesian methods
 # BayesA
 ETA <-list(list(X=SNP, model="BayesA"))
 fmBA <-BGLR(y=yNA, ETA=ETA, nIter=5000, burnIn=1000, saveAt="BA_")
@@ -51,7 +50,7 @@ write.table(fmBA$yHat[-test],file="BA_yHat_training_predicted.txt",row.names=F,c
 BAco<-cor(fmBA$yHat[test],y[test])
 BAco1<-cor(fmBA$yHat[-test],y[-test])
 
-## bayesB
+## BayesB
 ETA <-list(list(X=SNP, model="BayesB"))
 fmBB <-BGLR(y=yNA, ETA=ETA, nIter=5000, burnIn=1000, saveAt="BB_")
 write.table(fmBB$yHat[test],file="BB_yHat_test_predicted.txt",row.names=F,col.names=F,quote=F, append=F,sep="\n")
