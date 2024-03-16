@@ -61,7 +61,7 @@ for i in Epoch :
     co1_1,p1_1=stats.pearsonr(y_train_full[:,0], train_pred[:,0])
 
 
-    meta_cor=f"meta_NN_correlation.txt"
+    meta_cor=f"meta_model_correlation.txt"
     outfile=open(meta_cor,"w")
     outfile.write(f"meta test {co1} training {co1_1}\n")
     outfile.close()
