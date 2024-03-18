@@ -14,8 +14,7 @@ import os
 geno_data=pd.read_csv(sys.argv[1], sep="\t")  ## genotype data 
 pheno_data=pd.read_csv(sys.argv[2], sep="\t")  ## phenotype data
 
-pheno_idx=int(sys.argv[3]) ## select phenotype index
-rand_idx=int(sys.argv[4])  ## select randon state number
+pheno_name=sys.argv[3] ## select phenotype 
 
 
 X_data=geno_data.transpose()
@@ -25,7 +24,7 @@ y_target=pheno_data.iloc[:,pheno_idx]
 y_target=(y_target-y_target.mean())/y_target.std()
 
 t01 = datetime.datetime.now()
-X_train, X_test, y_train, y_test=train_test_split(X_data, y_target, test_size=0.2, random_state=rand_idx)
+X_train, X_test, y_train, y_test=train_test_split(X_data, y_target, test_size=0.2)
 
 ## Numpy transpose
 X_train_n=X_train.values
