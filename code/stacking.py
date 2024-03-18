@@ -18,7 +18,7 @@ pheno_name=sys.argv[3] ## select phenotype
 
 
 X_data=geno_data.transpose()
-y_target=pheno_data.iloc[:,pheno_idx]
+y_target=pheno_data[pheno_name]
 
 ## y normalization
 y_target=(y_target-y_target.mean())/y_target.std()
