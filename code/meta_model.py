@@ -16,7 +16,7 @@ BA_pred=pd.read_csv("BA_yHat_training_stacking_predicted.txt", sep="\n",header=N
 BB_pred=pd.read_csv("BB_yHat_training_stacking_predicted.txt", sep="\n",header=None) 
 BC_pred=pd.read_csv("BC_yHat_training_stacking_predicted.txt", sep="\n",header=None) 
 BL_pred=pd.read_csv("BL_yHat_training_stacking_predicted.txt", sep="\n",header=None) 
-BRR_pred=pd.read_csv("gBLUP_yHat_training_stacking_predicted.txt", sep="\n",header=None) 
+gBLUP_pred=pd.read_csv("gBLUP_yHat_training_stacking_predicted.txt", sep="\n",header=None) 
 
 train_n=int(y_pheno.shape[0]*0.8)
 
@@ -26,10 +26,10 @@ BA_test_pred=pd.read_csv("BA_yHat_test_stacking_predicted.txt", sep="\n",header=
 BB_test_pred=pd.read_csv("BB_yHat_test_stacking_predicted.txt", sep="\n",header=None) 
 BC_test_pred=pd.read_csv("BC_yHat_test_stacking_predicted.txt", sep="\n",header=None) 
 BL_test_pred=pd.read_csv("BL_yHat_test_stacking_predicted.txt", sep="\n",header=None) 
-BRR_test_pred=pd.read_csv("gBLUP_yHat_test_stacking_predicted.txt", sep="\n",header=None) 
+gBLUP_test_pred=pd.read_csv("gBLUP_yHat_test_stacking_predicted.txt", sep="\n",header=None) 
 
-Stack_final_X_train=np.concatenate((rrBLUP_pred, BA_pred, BB_pred, BC_pred, BL_pred, BRR_pred), axis=1)
-Stack_final_X_test=np.concatenate((rrBLUP_test_pred, BA_test_pred, BB_test_pred, BC_test_pred, BL_test_pred, BRR_test_pred),axis=1)
+Stack_final_X_train=np.concatenate((rrBLUP_pred, BA_pred, BB_pred, BC_pred, BL_pred, gBLUP_pred), axis=1)
+Stack_final_X_test=np.concatenate((rrBLUP_test_pred, BA_test_pred, BB_test_pred, BC_test_pred, BL_test_pred, gBLUP_test_pred),axis=1)
 
 y_pheno=y_pheno.values
 y_train_full=y_pheno[:train_n]
