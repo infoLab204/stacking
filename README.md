@@ -29,7 +29,7 @@ Stacking involves the integration of multiple models, called base models, along 
   	 |stacking.py| main function|
   	 |base_model.R| phenotype prediction of each base model|
   	 |input_meta.R| generate input for meta-model using base model|
-  	 |meta_model.py| phenotype prediction of met-model|
+  	 |meta_model.py| phenotype prediction of meta-model|
   	 |analysis.R| evaluate MSE, overfitting, correlation|
   	 |hypothesis_tests.R| Non-inferiority test|
 
