@@ -3,7 +3,7 @@ Sunhee Kim and Chang-Yong Lee
 
 Stacking involves the integration of multiple models, called base models, along with an additional model, called the meta-model. The base models generate predictions for the data, and the meta-model is tasked with learning how to optimally combine these predictions to produce the final predictions. We selected six base models from the linear mixed and Bayesian models widely used in GS. To effectively combine the results of the base models, we used a neural network of a multi-layer perceptron as our meta-model. 
 
-## Install prerequisites : 
+## Install prerequisites 
 * Python : version 3.6 or later
 * R : version 4 or later
 * R-packages : rrBLUP, BGLR
