@@ -15,10 +15,10 @@ Stacking involves the integration of multiple models, called base models, along 
 3.	preprocessed maize : genotype and phenotype data: https://github.com/infoLab204/stacking/blob/main/data/maize.tar.gz
 4.	preprocessed mice : genotype and phenotype data : https://github.com/infoLab204/stacking/blob/main/data/mice.tar.gz
 5. The original data of the four species
-* Rice :  http://www.ricediversity.org/data/sets/44kgwas/ 
-* Barley : https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0164494#sec019
-* Mazie : https://www.panzea.org/data
-* Mice : In the installed R-packages BGLR
+    * Rice :  http://www.ricediversity.org/data/sets/44kgwas/ 
+    * Barley : https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0164494#sec019
+    * Mazie : https://www.panzea.org/data
+    * Mice : In the installed R-packages BGLR
 
 
 ## Python and R scripts tutorial
