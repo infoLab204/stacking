@@ -53,15 +53,19 @@ for i in Epoch :
     hist=linear_model.fit(Stack_final_X_train,y_train_full,epochs=E, batch_size=BS, verbose=1, validation_split=0.2)
 
     test_pred=linear_model.predict(Stack_final_X_test)
-    np.savetxt(f"meta_yHat_test_predicted.txt",test_pred, fmt="%.8f")
+    np.savetxt(f"y_test_meta.txt",test_pred, fmt="%.8f")
     train_pred=linear_model.predict(Stack_final_X_train)
-    np.savetxt(f"meta_yHat_training_predicted.txt",train_pred, fmt="%.8f")
+    np.savetxt(f"y_training_meta.txt",train_pred, fmt="%.8f")
 
-    co1,p1=stats.pearsonr(y_test[:,0], test_pred[:,0])
-    co1_1,p1_1=stats.pearsonr(y_train_full[:,0], train_pred[:,0])
-
-
-    meta_cor=f"meta_model_correlation.txt"
-    outfile=open(meta_cor,"w")
-    outfile.write(f"meta test {co1} training {co1_1}\n")
-    outfile.close()
+os.system("rm -rf rrBLUP_yHat_training_stacking_predicted.txt")
+os.system("rm -rf rrBLUP_yHat_test_stacking_predicted.txt")
+os.system("rm -rf gBLUP_yHat_training_stacking_predicted.txt")
+os.system("rm -rf gBLUP_yHat_test_stacking_predicted.txt")
+os.system("rm -rf BA_yHat_training_stacking_predicted.txt")
+os.system("rm -rf BA_yHat_test_stacking_predicted.txt")
+os.system("rm -rf BB_yHat_training_stacking_predicted.txt")
+os.system("rm -rf BB_yHat_test_stacking_predicted.txt")
+os.system("rm -rf BC_yHat_training_stacking_predicted.txt")
+os.system("rm -rf BC_yHat_test_stacking_predicted.txt")
+os.system("rm -rf BL_yHat_training_stacking_predicted.txt")
+os.system("rm -rf BL_yHat_test_stacking_predicted.txt")
