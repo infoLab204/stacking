@@ -24,35 +24,43 @@ Stacking involves the integration of multiple models, called base models, along 
 ## Python and R scripts tutorial
 
 1.	Download the script from the GitHub repository
-    * stacking.py            ## main function
-    * base_model.R          ## phenotype prediction of each base model    
-    * input_meta.R  ## generate input for meta-model using base model
-    * meta_model.py         ## phenotype prediction of met-model
-    * analysis.R  ## analysis of result : mse, overfitting, correlation coefficient
-    * hypothesis_tests.R  ## Non-inferiority test 
+    |Module|Explain|
+  	 |---|---|
+  	 |stacking.py| main function|
+  	 |base_model.R| phenotype prediction of each base model|
+  	 |input_meta.R| generate input for meta-model using base model|
+  	 |meta_model.py| phenotype prediction of met-model|
+  	 |analysis.R| evaluate MSE, overfitting, correlation|
+  	 |hypothesis_tests.R| Non-inferiority test|
 
-3.	Python scripts for predictions using base model and meta-model    
-    Input: genotype data, phenotype data, and phenotype name    
-    Usage : python stacking.py genotype phenotype phenotype_name    
+![flowchart ](./readme.png)
+
+
+
+2.	Python scripts for predictions using base model and meta-model    
+    **Input**: genotype data, phenotype data, and phenotype name    
+    **Usage** : python stacking.py genotype phenotype phenotype_name
+  	
   	 (ex) Phenotype SSW in barley       
-        python stacking.py genotype_barley.txt phenotype_barley.txt SSW    
+            python stacking.py genotype_barley.txt phenotype_barley.txt SSW    
 
-    Output : predicted phenotypes using test and training data with each model    
-       * y_test_rrBLUP.txt  y_training_rrBLUP.txt    
-       * y_test_gBLUPP.txt  y_training_gBLUP.txt    
-       * y_test_BA.txt  y_training_BA.txt    
-       * y_test_BB.txt  y_training_BB.txt    
-       * y_test_BC.txt  y_training_BC.txt    
-       * y_test_BL.txt  y_training_BL.txt    
-       * y_test_meta.txt  y_training_meta.txt    
+    **Output** : predicted phenotypes using test and training data with each model    
+       * y_test_rrBLUP.txt　　y_training_rrBLUP.txt    
+       * y_test_gBLUPP.txt　　y_training_gBLUP.txt    
+       * y_test_BA.txt　　　　y_training_BA.txt    
+       * y_test_BB.txt　　　　y_training_BB.txt    
+       * y_test_BC.txt　　　　y_training_BC.txt    
+       * y_test_BL.txt　　　　y_training_BL.txt    
+       * y_test_meta.txt　　　y_training_meta.txt    
 
    
-5.	Analysis of results: mean squared error, overfitting, correlation coefficient    
-Input: predicted phenotypes using base and meta models    
-Usage: Rscript analysis.R   # evaluate MSE, overfitting, correlation    
-Output: mse_test.txt, mse_train.txt, overfitting.txt, correlation.txt    
+3.	Analysis of results: mean squared error, overfitting, correlation coefficient    
+**Input**: predicted phenotypes using base and meta models    
+**Usage**: Rscript analysis.R   
+**Output**: mse_test.txt　　mse_train.txt　　overfitting.txt　　correlation.txt    
 
-6.	Non-inferiority test results    
-Usage: Rscript hypothesis_tests.R    
-Output: power.txt   sampe_size.txt 	margin.txt	p_value.txt    
+4.	Non-inferiority test results
+**Input**: predicted phenotypes using base and meta models    
+**Usage**: Rscript hypothesis_tests.R    
+**Output**: power.txt　　sampe_size.txt　　margin.txt　　p_value.txt    
 
