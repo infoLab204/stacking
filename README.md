@@ -59,7 +59,7 @@ Stacking involves the integration of multiple models, called base models, along 
 **Usage**: Rscript analysis.R   
 **Output**: mse_test.txt　　mse_train.txt　　overfitting.txt　　correlation.txt    
 
-4.	Non-inferiority test results
+4.	Non-inferiority test results    
 **Input**: predicted phenotypes using base and meta models    
 **Usage**: Rscript hypothesis_tests.R    
 **Output**: power.txt　　sampe_size.txt　　margin.txt　　p_value.txt    
