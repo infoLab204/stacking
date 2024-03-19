@@ -24,7 +24,7 @@ Stacking involves the integration of multiple models, called base models, along 
 ## Python and R scripts tutorial
 
 1.	Download the script from the GitHub repository
-    |Module|Explain|
+    |Script|Explain|
   	 |---|---|
   	 |stacking.py| main function|
   	 |base_model.R| phenotype prediction of each base model|
