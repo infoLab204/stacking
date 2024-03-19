@@ -33,7 +33,7 @@ Stacking involves the integration of multiple models, called base models, along 
   	 |analysis.R| evaluate MSE, overfitting, correlation|
   	 |hypothesis_tests.R| Non-inferiority test|
 
-![flowchart ](./readme.png)
+![flowchart ](./readme_1.png)
 
 
 
