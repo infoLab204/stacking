@@ -1,6 +1,7 @@
 library(BGLR)
 library(rrBLUP)
 
+## load data
 SNP <- read.table('X_training_test_full',sep="\t", header=F)
 Y0 <- read.table('y_training_test_full',sep="\t", header=F)
 
@@ -158,3 +159,5 @@ write.table(fmBL$yHat[test],file="BL_yHat_test_stacking_predicted.txt",row.names
 ETA <-list(list(X=SNP, model="BRR"))
 fmBRR <-BGLR(y=yNA, ETA=ETA, nIter=5000, burnIn=1000, saveAt="BRR_")
 write.table(fmBRR$yHat[test],file="gBLUP_yHat_test_stacking_predicted.txt",row.names=F,col.names=F,quote=F, append=F,sep="\n")
+
+## end of input_meta.R
