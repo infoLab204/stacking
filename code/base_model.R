@@ -1,6 +1,7 @@
 library(BGLR)
 library(rrBLUP)
 
+## load data
 SNP <- read.table('X_training_test_full',sep="\t", header=F)
 Y0 <- read.table('y_training_test_full',sep="\t", header=F)
 
@@ -18,7 +19,7 @@ yNA[test] <-NA
 test_file_name="y_test_rrBLUP.txt"
 train_file_name="y_training_rrBLUP.txt"
 
-## Linear Mixed Model(LMM)
+## rrBLUP
 pheno_train <- y[-test]
 pheno_test <- y[test]
 geno_train <- as.matrix(SNP[-test,])
