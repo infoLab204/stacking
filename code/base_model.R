@@ -68,4 +68,5 @@ ETA <-list(list(X=SNP, model="BRR"))
 fmBRR <-BGLR(y=yNA, ETA=ETA, nIter=5000, burnIn=1000, saveAt="gBLUP_")
 write.table(fmBRR$yHat[test],file="y_test_gBLUP.txt",row.names=F,col.names=F,quote=F, append=F,sep="\n")
 write.table(fmBRR$yHat[-test],file="y_training_gBLUP.txt",row.names=F,col.names=F,quote=F, append=F,sep="\n")
-## end
+
+## end of base_model.R
