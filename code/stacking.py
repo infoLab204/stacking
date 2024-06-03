@@ -68,3 +68,5 @@ t02 = datetime.datetime.now()
 print("run time :", t02 - t01)
 
 os.system("rm -rf *.dat")
+
+## End of staking.py
