@@ -1,9 +1,11 @@
+## phenotype data load
 pheno <- read.table("y_training_test_full")
 
 n <- as.integer(nrow(pheno)*0.8)
 y_test <- pheno$V1[(n+1):nrow(pheno)]
 N=length(y_test)
 
+## predicted data load
 stacking_test=read.table("meta_yHat_test_predicted.txt")
 rrBLUP_test=read.table("rrBLUP_yHat_test_predicted.txt")
 BA_test=read.table("BA_yHat_test_predicted.txt")
@@ -19,7 +21,6 @@ BB_diff <- abs(y_test-BB_test)
 BC_diff <- abs(y_test-BC_test)
 BL_diff <- abs(y_test-BL_test)
 gBLUP_diff <- abs(y_test-gBLUP_test)
-
 
 rrBLUP_mean <- mean(rrBLUP_diff$V1)
 BA_mean <- mean(BA_diff$V1)
@@ -124,3 +125,5 @@ pvalue[6] <- gBLUP$p.value
 print("noninferiority test p-value")
 paste(pvalue[1],pvalue[2],pvalue[3],pvalue[4],pvalue[5],pvalue[6])
 write.table(paste(pvalue[1],pvalue[2],pvalue[3],pvalue[4],pvalue[5],pvalue[6]),file="noninferiority_test_pvalue.txt",row.names=F,col.names=F,quote=F, append=F,sep="\t")
+
+# end of hypothesis_tests.R
