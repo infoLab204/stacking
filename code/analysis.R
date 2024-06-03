@@ -1,3 +1,4 @@
+## phenotype data load
 y=read.table("y_training_test_full")
 
 n <- as.integer(nrow(y)*0.8) 
@@ -11,7 +12,6 @@ BB_test=read.table("BB_yHat_test_predicted.txt")
 BC_test=read.table("BC_yHat_test_predicted.txt")
 BL_test=read.table("BL_yHat_test_predicted.txt")
 gBLUP_test=read.table("gBLUP_yHat_test_predicted.txt")
-
 
 ## correlation 
 correlation=c(1:7)
@@ -44,7 +44,6 @@ BC <- BC_sum/length(y_test)
 BL <- BL_sum/length(y_test)
 stacking <- stacking_sum/length(y_test)
 
-
 test_mse=c(1:7)
 test_mse[1]<-rrBLUP
 test_mse[2]<-gBLUP
@@ -57,8 +56,6 @@ test_mse[7]<-stacking
 paste(test_mse)
 write.table(paste("rrBLUP","gBLUP","BA","BB","BC","BL","Stacking"),file="MSE_test.txt",row.names=F,col.names=F,quote=F, append=F,sep="\t")
 write.table(paste(test_mse[1],test_mse[2],test_mse[3],test_mse[4],test_mse[5],test_mse[6], test_mse[7]),file="MSE_test.txt",row.names=F,col.names=F,quote=F, append=T,sep="\t")
-
-
 
 ## training mse
 stacking_training=read.table("meta_yHat_training_predicted.txt")
@@ -85,7 +82,6 @@ BC <- BC_sum/length(y_training)
 BL <- BL_sum/length(y_training)
 stacking <- stacking_sum/length(y_training)
 
-
 training_mse=c(1:7)
 training_mse[1]<-rrBLUP
 training_mse[2]<-gBLUP
@@ -105,3 +101,4 @@ print(overfitting)
 write.table(paste("rrBLUP","gBLUP","BA","BB","BC","BL","Stacking"),file="overfitting.txt",row.names=F,col.names=F,quote=F, append=F,sep="\t")
 write.table(paste(overfitting[1],overfitting[2],overfitting[3],overfitting[4],overfitting[5],overfitting[6], overfitting[7]),file="overfitting.txt",row.names=F,col.names=F,quote=F, append=T,sep="\t")
 
+# end of analysis.R
